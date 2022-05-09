@@ -1,0 +1,170 @@
+$primary-color: #5c49d8;
+$secondry-color: #ffffff;
+$thirdly-color:#3F3F3F;
+
+.wrapper{
+    position: relative;
+    width: 22.5rem;
+    height: 40rem;
+    left: 31.25rem;
+    top: 0px;
+    background: $secondry-color;
+    border: 1px solid $thirdly-color;
+    &__title{
+        position: absolute;
+        width: 3.1875rem;
+        height: 1.1875rem;
+        left: 9.625rem;
+        top: 1.625rem;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 1.125rem;
+        line-height: 1.1875rem;
+        color: $thirdly-color;
+    }
+    &__content{
+        position: absolute;
+        width: 21.375rem;
+        height: 19.9375rem;
+        left: 0.5625rem;
+        top: 6.75rem;
+        border: 1px solid #D5D5D5;
+        box-sizing: border-box;
+        border-radius: 7px;
+    }
+} 
+
+
+.profileLogoBorder{
+    position: relative;
+    width: 7.5rem;
+    height: 7.549375rem;
+    margin: 0 auto;
+    margin-top: -3rem;
+    background-color: $secondry-color;
+    border: 1px solid $primary-color;
+    box-sizing: border-box;
+    border-radius: 69px;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &__profileLogo{
+        position: absolute;
+        // width:5.023125rem;
+        height: 5.091875rem;
+        z-index: 2000;  
+    }
+    
+}
+
+
+
+.form{
+    margin-top: 0.9375rem;
+    margin-right: 0.3125rem;
+    &__inputBox{
+        position: relative;
+        width: 90%;
+        border-radius: 5px;
+        border: 1px solid $secondry-color;
+        margin: 0 auto;
+        color: $primary-color;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 1rem;
+        margin-bottom: 1.25rem;
+    }
+    &__label{
+        float: right;
+        z-index: 100000;
+        position: relative;
+        top: -2.1875rem;
+        right: 0.625rem;
+        cursor: pointer;
+    }
+    &__input::placeholder{
+        position: relative;
+        left: 0.875rem;
+        font-family: 'IRANSansDNFaNum';
+        font-style: normal;
+        font-weight: 100;
+        font-size: 1rem;
+        color: $thirdly-color;  
+    }
+    &__input{
+        width: 100%;
+        border-radius: 5px;
+        height: 3.0625rem;
+        border: 1px solid $primary-color;
+    }
+    &__span{
+        position: absolute;
+        margin-top: -0.5rem;
+        z-index: 9000;
+        background-color: $secondry-color;
+        right: 0.9375rem;  
+        padding-right: 0.4375rem;
+        padding-left: 0.4375rem;  
+    }
+}
+
+.saveChanges {
+    display: flex;
+    justify-content: center;
+    &__button {
+        position: absolute;
+        width: 19.5rem;
+        height: 2.5rem;
+        left: 1.5rem;
+        top: 29.1875rem;
+        background: $primary-color;
+        border: 3px solid $primary-color;
+        box-sizing: border-box;
+        border-radius: 6px;
+        color: $secondry-color;
+        font-weight: 400;
+        font-size: 1rem;
+        line-height: 1.4375rem;
+        cursor: pointer;
+    }
+  }
+
+
+.Footer{
+    width: 22.4rem;
+    height:4.4375rem;
+    left: 0px;
+    margin-top:35.5625rem;
+    background: $secondry-color;
+    border: 1px solid #DCDCDC;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    &__grade{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      
+    }
+    &__home{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      
+    }
+    &__linkgrade{
+        color: #AEAEAE;
+        text-decoration: none;
+        padding-top: 0.3rem;
+    }
+    &__linkhome{
+        color:$primary-color;
+        text-decoration: none;
+        padding-top: 0.3rem;
+    }
+  
+}
