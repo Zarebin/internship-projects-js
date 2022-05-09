@@ -1,0 +1,82 @@
+$b-w-white: white;
+$tab-color:#707070;
+
+.content{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  direction: rtl;
+  font-family: IRANYekanWeb;
+
+}
+.content__Logo{
+  display: flex;
+  justify-content: center;
+
+
+
+}
+
+.content__SearchBox{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  width: 21.5rem;
+  height: 2rem;
+  border-radius: 3.125rem;
+  box-shadow: 0 0 0.5rem 0 rgba(124, 77, 255, 0.16);
+  background-color: $b-w-white;
+  margin-top:0.5rem ;
+}
+.SearchBox__searchIcon{
+  margin-right: 0.75rem;
+  width: 1.5rem;
+  height: 1.5rem;
+}
+.SearchBox__inputSearch{
+  width: 15.5rem;
+  height: 1.5rem;
+  border: 0;
+  outline: none;
+  font-size: 0.75rem;
+  background-color: transparent;
+  cursor: pointer
+}
+.SearchBox__closeButton{
+  width: 1.5rem;
+  height: 1.5rem;
+  border: 0;
+  outline: none;
+  background-color: transparent;
+  font-size: 1.2rem;
+  margin-left: 0.5rem;
+  color: #707070;
+
+}
+
+.content__tabs{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  width: 21.5rem;
+  height: 2.5rem;
+  margin-top:0.65rem ;
+
+}
+.tabs__allTab{
+  display: flex;
+  font-size:0.8rem ;
+  line-height:2.3rem ;
+  color: $tab-color;
+  cursor: pointer;
+
+}
+.tabs__allTab--active{
+  border-bottom: 2px solid #651fff;
+  color: #651fff;
+  font-weight: 700;
+}
+

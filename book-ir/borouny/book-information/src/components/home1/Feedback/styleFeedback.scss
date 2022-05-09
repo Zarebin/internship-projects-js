@@ -1,0 +1,42 @@
+.Feedback
+{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-content: center;
+  width: 21rem;
+  height: 1.75rem;
+  margin: 1rem 0;
+  font-family: IRANYekanWeb;
+  position: relative;
+  direction: rtl;
+}
+.Feedback__label{
+  font-size: 0.75rem;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 2;
+  letter-spacing: normal;
+  text-align: right;
+  color: #69676d;
+  position: absolute;
+  right: 0;
+
+
+}
+.Feedback__icon{
+  width: 1.5rem;
+  height: 1.75rem;
+  border: 0;
+  outline: none;
+  background-color: transparent;
+  position: absolute;
+  left: 0.5rem;
+  cursor: pointer;
+}
+.Feedback__icon--second{
+
+  left: 3.5rem;
+  cursor: pointer;
+}

@@ -1,0 +1,55 @@
+.thumbnail {
+  width: 7rem;
+  height: 16rem;
+  margin: 0 0.5rem;
+  border-radius: 0.25rem;
+  border: solid 0.063rem #e4e1ed;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  direction: rtl;
+}
+.thumbnail__image{
+  width: 7rem;
+  height: 10.625rem;
+  display: flex;
+  overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
+}
+.thumbnail__img{
+  width: 7rem;
+  height: 10.625rem;
+}
+
+.thumbnail__title{
+  width: 6rem;
+  height: 2.75rem;
+  padding: 0 0 0.013rem;
+  font-family: IRANYekanWeb;
+  font-size: 0.875rem;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.71;
+  letter-spacing: normal;
+  text-align: right;
+  color: #434148;
+  margin-right: 0.5rem;
+
+}
+
+.thumbnail__author{
+  width: 6rem;
+  height: 1.063rem;
+  font-family: IRANYekanWeb;
+  font-size: 0.75rem;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 2;
+  letter-spacing: normal;
+  text-align: right;
+  color: #69676d;
+  margin:0 0.5rem 1rem 0;
+}

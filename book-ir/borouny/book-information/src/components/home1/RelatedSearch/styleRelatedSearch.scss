@@ -1,0 +1,33 @@
+.relatedInfo
+{
+  height: 20rem;
+  background-color:white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  justify-items: flex-end;
+}
+
+.relatedInfo__label{
+  width: 21rem;
+  height: 1rem;
+  font-family: IRANYekanWeb;
+  font-size: 0.75rem;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 2;
+  letter-spacing: normal;
+  text-align: right;
+  color: #555;
+}
+
+.relatedInfo__thumbnail{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom:1rem ;
+  overflow-x: auto;
+  overflow-y: hidden;
+  direction: rtl;
+}

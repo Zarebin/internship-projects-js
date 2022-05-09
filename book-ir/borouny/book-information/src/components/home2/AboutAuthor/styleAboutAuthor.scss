@@ -1,0 +1,56 @@
+.container-text{
+  display: flex;
+  flex-direction: column;
+  direction: rtl;
+  justify-content:space-between ;
+  justify-items: start;
+  width: 19.5rem;
+  height: 15.063rem;
+  font-family: IRANYekanWeb;
+  font-stretch: normal;
+  font-style: normal;
+  letter-spacing: normal;
+  text-align: right;
+  position: relative;
+}
+.container-text__title{
+  display: flex;
+  position: relative;
+  top: 0.75rem;
+  width: 19.5rem;
+  height: 1.25rem;
+  margin: 0 0 0.25rem;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5;
+  color: #28262d;
+}
+.container-text__link{
+  display: flex;
+  width: 19.5rem;
+  height: 0.813rem;
+  margin: 0 0 0.063rem;
+  font-size: 0.625rem;
+  font-weight: 300;
+  line-height: 2.4;
+  color: #651fff;
+}
+.container-text__line{
+
+  display:flex;
+  width: 19.5rem;
+  height: 0;
+  margin: 0.25rem 0 0;
+  border: solid 0.063rem #f4f2f8;
+}
+.container-text__description{
+  display: flex;
+  width: 19.5rem;
+  height: 10.2rem;
+  font-size: 0.75rem;
+  font-weight: normal;
+  line-height: 2;
+  color: #69676d;
+  overflow: hidden;
+  //text-overflow:ellipsis ;
+}
