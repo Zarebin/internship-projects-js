@@ -1,0 +1,23 @@
+.top-menu-item {
+  width: 16%;
+  text-align: center;
+  box-sizing: border-box;
+  padding-bottom: 14px;
+  &:active {
+    padding-bottom: 6px;
+    width: 16%;
+    text-align: center;
+    box-sizing: border-box;
+    border-bottom: 4px rgb(128, 10, 238) solid;
+    color: rgb(128, 10, 238);
+  }
+}
+
+.active-item {
+  padding-bottom: 6px;
+  width: 16%;
+  text-align: center;
+  box-sizing: border-box;
+  border-bottom: 4px rgb(128, 10, 238) solid;
+  color: rgb(128, 10, 238);
+}
