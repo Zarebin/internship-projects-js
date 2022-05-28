@@ -1,10 +1,12 @@
-import { takeEvery } from 'redux-saga/effects';
+import { takeEvery, put } from 'redux-saga/effects';
 
 import {INCREMENT_ASYNC_ACTION_TYPE} from "./actions";
+import {increment} from "./counterSlice";
 
 type IncrementAsyncPayloadType = any;
 
 function* incrementAsync(action: IncrementAsyncPayloadType) {
+    yield put(increment())
     console.log('saga', action);
 }
 
