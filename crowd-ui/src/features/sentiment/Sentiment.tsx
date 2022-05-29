@@ -13,20 +13,15 @@ enum SentimentType {
 }
 
 function Sentiment() {
+  useEffect(() => {
+    dispatch(getUsersFetch());
+  }, []);
+
   const dispatch = useAppDispatch();
   const step = useAppSelector((state) => state.sentimentReducer.step);
   const inputData: any = useAppSelector(
     (state) => state.sentimentReducer.inputs
   );
-  const result = useAppSelector((state) => state.sentimentReducer.result);
-
-  console.log("step", step);
-  console.log("myarray", inputData);
-  console.log("final array", result);
-
-  useEffect(() => {
-    dispatch(getUsersFetch());
-  }, []);
 
   return (
     <>
