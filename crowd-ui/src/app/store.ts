@@ -1,5 +1,6 @@
 import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit';
 import counterReducer from '../features/counter/counterSlice';
+import imageLabelVerificationReducer from '../features/image-label-verification/imageLabelVerificationSlice'
 import createSagaMiddleware from 'redux-saga'
 import rootSaga from './sagas';
 
@@ -9,6 +10,7 @@ const sagaMiddleware = createSagaMiddleware();
 const store = configureStore({
   reducer: {
     counter: counterReducer,
+    imageLabelVerification : imageLabelVerificationReducer,
   },
   middleware: [sagaMiddleware],
 });
