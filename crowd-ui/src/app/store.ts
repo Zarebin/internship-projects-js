@@ -1,11 +1,25 @@
 import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit';
 import counterReducer from '../features/counter/counterSlice';
+import createSagaMiddleware from 'redux-saga'
+import rootSaga from './sagas';
+import infoReducer from '../features/foodFacts/FoodFactsSlice'
+// create the saga middleware
+const sagaMiddleware = createSagaMiddleware();
 
-export const store = configureStore({
+const store = configureStore({
   reducer: {
-    counter: counterReducer,
+    counter: counterReducer,infoReducer
+
+
   },
+  middleware: [sagaMiddleware],
 });
+
+export default function configureAppStore() {
+  // then run the saga
+  sagaMiddleware.run(rootSaga);
+  return { store,  };
+}
 
 export type AppDispatch = typeof store.dispatch;
 export type RootState = ReturnType<typeof store.getState>;
