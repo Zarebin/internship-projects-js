@@ -1,0 +1,42 @@
+.container {
+    padding: 45px;
+    min-width: 360px;
+    min-height: 640px;
+    max-width: 414px;
+    max-height: 896px;
+    margin: 100px auto;
+    border: 1px solid rgb(70, 69, 69);
+}
+hr{
+    color: rgb(109, 106, 106);
+}
+img{
+    padding: 45px;
+    min-width: 100px;
+    min-height: 100px;
+    max-width: 200px;
+    max-height: 350px;
+}
+.btn{
+    padding: 10px;
+    margin: 10px;
+    width: 70px;
+    height: 40px;
+    cursor: pointer;
+    color: white;
+    border-radius: 5px;
+    border: 1px blue;
+    
+    background-color: rgb(67, 67, 247);
+}
+.foter{
+    display: flex;
+}
+.Perivious{
+    width: 50%;
+    cursor: pointer;
+}
+.Next{
+    margin-left: 175px;
+    cursor: pointer;
+}
