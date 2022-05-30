@@ -1,0 +1,24 @@
+.container
+{
+  width: 20rem;
+  height:100vh;
+  width: 100vw;
+  direction: ltr;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow-x: hidden;
+  overflow-y: hidden;
+
+}
+
+.container__button{
+  //width: 5rem;
+  margin: 0 auto;
+  flex: 1 1 auto; /*grow shrink bases */
+  //margin-bottom:2rem;
+  //background-color: darkgrey;
+}
+Button{
+  width: 7rem;
+}

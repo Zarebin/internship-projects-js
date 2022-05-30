@@ -1,0 +1,10 @@
+.selfSelection{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex:1 1 auto;
+}
+.checkMark{
+  display: flex;
+  flex-direction: column-reverse;
+}

@@ -1,0 +1,14 @@
+.footer{
+  border-top: lightgray 1px solid;
+  flex:1 1 auto;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+}
+
+
+.footer-a{
+  margin-top: 1rem;
+  text-decoration: none;
+}
+
