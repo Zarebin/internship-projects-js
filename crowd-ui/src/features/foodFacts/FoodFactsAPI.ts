@@ -16,7 +16,15 @@ import axios from "axios";
 
 export const  GetDataInformation=async()=> {
   const resp=await axios.get("https://jsonplaceholder.typicode.com/photos")
+  console.log("resp.data is:",resp.data)
+  const DataLength=resp.data.length
+  console.log("resp.data.length is:",DataLength)
+
+ console.log("myStep is :",Math.floor(Math.random() * DataLength))
+ const resp2=Math.floor(Math.random() * DataLength)
+ console.log("resp2 is :",resp2)
   return resp;
+  
 
 }
 

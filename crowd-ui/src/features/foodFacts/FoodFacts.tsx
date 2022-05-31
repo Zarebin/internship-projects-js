@@ -17,11 +17,18 @@ export default function FoodFacts(){
 
 
 const dispatch=useAppDispatch();
-const myArray=useAppSelector((state:any)=>(state.infoReducer.Information));
+const myArray=useAppSelector((state:any)=>(state.FoodFactsReducer.Information));
+console.log("myArray.Data is :",myArray.data)
 
-const myState=useAppSelector((state:any)=>state.infoReducer);
+// console.log("myArrayLength is:",myArray.data.length)
+// const dataNumber=myArray.data.length
+///
+// const myStep2=Math.floor(Math.random() * dataNumber)
 
-const myStep=useAppSelector((state:any)=>state.infoReducer.step);
+const myState=useAppSelector((state:any)=>state.FoodFactsReducer);
+
+const myStep=useAppSelector((state:any)=>state.FoodFactsReducer.step);
+
 // const userValue=useSelector((state)=>state.Information.userValue)
 // console.log("userVale:",userValue)
 console.log("myState",myState)

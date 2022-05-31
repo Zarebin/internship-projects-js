@@ -30,6 +30,7 @@
 // }
 
 import { createSlice } from "@reduxjs/toolkit";
+
 const initialState={
   Information:[],
   step:0,
