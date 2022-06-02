@@ -2,4 +2,7 @@
     align-self:flex-start;
     position: relative;
     left: 12px;
+    overflow-wrap: break-word;
+    overflow: hidden;
+    padding: 10px;
 }

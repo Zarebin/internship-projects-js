@@ -1,18 +1,18 @@
-import { Routes, Route } from 'react-router-dom';
+import {Route} from 'react-router-dom';
 import Home from '../features/home/Home-page';
 import {Counter} from '../features/counter/Counter'
 import FoodFacts from '../features/foodFacts/FoodFacts';
 
 
-const AppAllRoutes = () =>{
+const Routes = () =>{
     return(
-        <Routes>
-            <Route path='/' element={<Home />}/>
-            <Route path='/counter' element={<Counter />}/>
-            <Route path='/foodFacts' element={<FoodFacts />}/>
-        </Routes>
+        <>
+            <Route exact path='/' component={Home}/>
+            <Route path='/counter'  component={Counter}/>
+            <Route exact path='/foodFacts'  component={FoodFacts}/>
+        </>
     )
 
 }
 
-export default AppAllRoutes
+export default Routes
