@@ -1,7 +1,9 @@
 import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit';
 import counterReducer from '../features/counter/counterSlice';
 import createSagaMiddleware from 'redux-saga'
-import rootSaga from './sagas';
+import mySaga from './sagas';
+import translationReducer from '../features/translationValidation/slice';
+import rootsaga from "./sagas";
 
 // create the saga middleware
 const sagaMiddleware = createSagaMiddleware();
@@ -9,13 +11,16 @@ const sagaMiddleware = createSagaMiddleware();
 const store = configureStore({
   reducer: {
     counter: counterReducer,
+    translationReducer,
+    // sentenceReducer:sentenceReducer,
   },
   middleware: [sagaMiddleware],
 });
 
 export default function configureAppStore() {
   // then run the saga
-  sagaMiddleware.run(rootSaga);
+
+  sagaMiddleware.run(rootsaga);
   return { store,  };
 }
 
