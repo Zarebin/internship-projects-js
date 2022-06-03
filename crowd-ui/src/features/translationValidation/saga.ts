@@ -1,23 +1,40 @@
-import { call, put, takeEvery ,SagaReturnType} from 'redux-saga/effects'
-import {getSentenceFetch} from "./slice";
-import {GET_SENTENCE_FETCH} from './action';
-import {fetch} from './api';
+import {call, put, takeEvery, SagaReturnType} from 'redux-saga/effects'
+import {getSentenceFetch, setLoading, postUserData} from "./slice";
+import {GET_SENTENCE_FETCH, POST_SENTENCE_DATA} from './action';
+import {fetchSentence, postUserSelection} from './api';
 
-type FetchUserResponseType=SagaReturnType<typeof fetch>
+type FetchUserResponseType = SagaReturnType<typeof fetchSentence>
+type PostUserResponseType = SagaReturnType<typeof postUserSelection>;
 
-function* workGetSentenceFetch(){
-    const sentences: FetchUserResponseType=yield call(fetch);
-    yield put(getSentenceFetch(sentences));
+function* GetSentenceFetch() {
+    const response: FetchUserResponseType = yield call(fetchSentence);
+    yield put(getSentenceFetch(response));
+    yield put(setLoading(true));
+    if (response.status >= 200 && response.status < 400) {
+        yield put(setLoading(false));
+    }
 
 }
 
-function* sentenceSaga () {
-    //Similar to sync await --first part the name of createSlice and the second of is reducer from slice.js --two part the name of function you call it
-    //  yield takeEvery('sentenceSlice/getSentenceFetch',workGetSentenceFetch);
-    //when call sentenceSaga,takeEvery(GET_SENTENCE_FETCH) call action that (export const GET_SENTENCE_FETCH = 'GET_SENTENCE_FETCH'; )
-    //after that the first part of GET_SENTENCE_FETCH is call that fire (export  const getSentenceFetch=createAction(GET_SENTENCE_FETCH);)
-    yield takeEvery(GET_SENTENCE_FETCH,workGetSentenceFetch);
+function* PostUserData(action: any) {
+    //#FIXME: this should be get from userSelector
+    const userId: number = 0;
+    const data: any = action.payload;
+    data["userId"] = userId;
+    const response: PostUserResponseType = yield call(postUserSelection, data);
+    yield put(postUserData(data));
+    if (response.status >= 200 && response.status < 400) {
+        yield put(setLoading(true));
+    } else {
+        yield put(setLoading(false));
+    }
+}
+
+function* mySaga() {
+
+    yield takeEvery(GET_SENTENCE_FETCH, GetSentenceFetch);
+    yield takeEvery(POST_SENTENCE_DATA, PostUserData);
 }
 
 
-export default sentenceSaga;
+export default mySaga;

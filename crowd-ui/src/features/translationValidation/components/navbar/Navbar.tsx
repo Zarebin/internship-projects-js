@@ -1,9 +1,6 @@
 import React from "react";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import Nav from "react-bootstrap/Nav";
-import {ThreeDotsVertical} from 'react-bootstrap-icons'
-
-import 'bootstrap/dist/css/bootstrap.min.css';
 
 import './navbar.scss'
 
@@ -27,16 +24,13 @@ class Navbar extends React.Component {
 
                 <div className="threeDotsVertical">
 
-                    <ThreeDotsVertical>
-                        {/*<Nav id="three">*/}
+                    <Nav>
                         <NavDropdown id="three" title="">
                             <NavDropdown.Item href="#">1</NavDropdown.Item>
                             <NavDropdown.Item href="#">2</NavDropdown.Item>
                             <NavDropdown.Item href="#">3</NavDropdown.Item>
-
                         </NavDropdown>
-                        {/*</Nav>*/}
-                    </ThreeDotsVertical>
+                    </Nav>
                 </div>
 
             </div>

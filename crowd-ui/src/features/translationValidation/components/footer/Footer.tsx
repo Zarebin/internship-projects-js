@@ -1,8 +1,7 @@
 import React from "react";
 import './footer.scss'
 import {ChevronLeft, ChevronRight} from 'react-bootstrap-icons';
-import {skipUserSelect} from "../../slice";
-import {previousUserSelect} from "../../slice";
+import {postUserData} from "../../slice";
 import {useDispatch, useSelector} from "react-redux";
 
 function Footer() {
@@ -10,8 +9,8 @@ function Footer() {
 
     return (
         <div className="footer">
-            <a className="footer-a " onClick={() => dispatch(previousUserSelect())}><ChevronLeft/>previous</a>
-            <a className="footer-a " onClick={() => dispatch(skipUserSelect())}>skip <ChevronRight/></a>
+            <a className="footer-a " ><ChevronLeft/>previous</a>
+            <a className="footer-a " onClick={() => dispatch(postUserData('noneSelect'))}>skip <ChevronRight/></a>
         </div>
     )
 
