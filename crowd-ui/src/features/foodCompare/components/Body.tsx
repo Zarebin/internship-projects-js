@@ -1,45 +1,91 @@
-import React, {useState} from 'react';
-import './style.css';
-import Food1 from '../data/Food1.jpg';
-import Food2 from '../data/Food2.jpg';
+import './style.scss';
 import Header from './Header';
+import Footer from "./Footer";
+import { getUsersFetch, postData } from "../actions";
+import { useAppSelector, useAppDispatch } from "../../../app/hooks";
+import { useEffect } from "react";
+import { selectLoading, selectQuestion } from "../foodCompareSlice";
+import "../../../../src/App.scss";
 
+
+
+
+
+enum foodCompareType {
+  bottom = 3,
+  similar = 2,
+  top = 1,
+  next = 0
+}
 
 function FoodCompareBody() {
-    const [food1,setImage1]=useState(Food1);
-    const [food2,setImage2]=useState(Food2);
+    const dispatch = useAppDispatch();
+
+    const question = useAppSelector(selectQuestion);
+    const isLoading = useAppSelector(selectLoading);
+
+    console.log("Body Loading:",isLoading );
+
+
+    // debugger;
+    useEffect(() => {
+      //debugger;
+      console.log("useEffect 1");
+      if (!isLoading) {
+      console.log("useEffect 2");
+
+        dispatch( getUsersFetch());
+      }
+      console.log("useEffect 3");
+
+    }, [isLoading]);
+  
+
+    
+    console.log("isLoading", isLoading);
+    console.log("input array", question);
+  
+    const getSendData = (foodCompare:foodCompareType) => {
+      return {
+        questionId: question.id,
+        foodCompare: foodCompare,
+      };
+    };
+    
     return (
-        <div className='container'>
+        <>
+        {isLoading ?? <p> please wait </p>}
+        {!isLoading ?? 
+          <div className='container'>
             <Header/>
-            <div><span>English</span></div>
-            <p>Which dish is more filling:</p><span>food1  (top) or  </span><span>food2  (bottom)  ?</span>
-            <img src={food1} ></img>
+            <p>Which dish is more filling:</p><span>{question.question1.title} (top) or  </span><span>{question.question2.title}  (bottom)  ?</span>
+            <img  ></img>
             <br></br><span>Photo @ 1</span>
             <br></br>
-                <img src={food2}></img>
+                <img ></img>
             <br></br><span>Photo @ 2</span>
             
 
             <div>
-                <button className='btn'>Top</button>
-                <button className='btn'>Similar</button>
-                <button className='btn'>Bottom</button>
+                <button className='btn' id='Top_btn'  onClick={() => {
+                  dispatch(postData(getSendData(foodCompareType.top)));
+                }}>Top</button>
+
+                <button className='btn' id='Similar_btn' onClick={() => {
+                  dispatch(postData(getSendData(foodCompareType.similar)));
+                }}>Similar</button>
+
+                <button className='btn' id='Bottom_btn' onClick={() => {
+                  dispatch(postData(getSendData(foodCompareType.bottom)));
+                }}>Bottom</button>
             </div>
 
 
             <hr></hr>
-            <div className='foter'>
-                <div className='Perivious'>
-                    <span >Perivious</span>
-                </div>
-                <div className='Next'>
-                    <span >Next</span>
-                </div>
-            </div>
-           
+           <Footer />
             
-        </div>
-        
+        </div>}
+        </>
     );
 }
 
