@@ -16,10 +16,11 @@ function Sentiment() {
   const dispatch = useAppDispatch();
 
   const question = useAppSelector(selectQuestion);
-  const isLoading = useAppSelector(selectLoading);
+  let isLoading = useAppSelector(selectLoading);
 
   useEffect(() => {
-    if (!isLoading) {
+    //isLoading = false;
+    if (isLoading) {
       dispatch(getUsersFetch());
     }
   }, [isLoading]);

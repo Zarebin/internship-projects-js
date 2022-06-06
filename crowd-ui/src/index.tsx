@@ -8,10 +8,7 @@ import "./index.css";
 import { BrowserRouter } from "react-router-dom";
 
 const { store } = configureAppStore();
-// const container = document.getElementById('root')!;
-// const root = createRoot(container);
 
-// const root = ReactDOM.createRoot(document.getElementById("root"));
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
