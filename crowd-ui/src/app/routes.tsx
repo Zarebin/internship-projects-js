@@ -1,7 +1,7 @@
 import { Route } from 'react-router-dom';
 import Home from '../features/home/Home-page';
 import {Counter} from '../features/counter/Counter'
-import FoodCompareBody from '../features/foodCompare/components/Body'
+import FoodCompareBody from '../features/foodCompare/Body'
 
 const Routes = () =>{
     return(

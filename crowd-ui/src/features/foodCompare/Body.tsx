@@ -1,11 +1,11 @@
 import './style.scss';
-import Header from './Header';
-import Footer from "./Footer";
-import { getUsersFetch, postData } from "../actions";
-import { useAppSelector, useAppDispatch } from "../../../app/hooks";
+import Header from './common/Header';
+import Footer from "./common/Footer";
+import { getUsersFetch, postData } from "./actions";
+import { useAppSelector, useAppDispatch } from "../../app/hooks";
 import { useEffect } from "react";
-import { selectLoading, selectQuestion } from "../foodCompareSlice";
-import "../../../../src/App.scss";
+import { selectLoading, selectQuestion } from "./foodCompareSlice";
+import "../../../src/App.scss";
 
 
 
@@ -27,18 +27,12 @@ function FoodCompareBody() {
     console.log("Body Loading:",isLoading );
 
 
-    // debugger;
+
     useEffect(() => {
       isLoading = false;
-      //debugger;
-      console.log("useEffect 1");
       if (!isLoading) {
-      console.log("useEffect 2");
-
         dispatch( getUsersFetch());
       }
-      console.log("useEffect 3");
-
     }, [isLoading]);
   
 
@@ -59,13 +53,15 @@ function FoodCompareBody() {
         {!isLoading && 
           <div className='container'>
             <Header/>
-            <p>Which dish is more filling:</p><span>{question.question1.title} (top) or  </span><span>{question.question2.title}  (bottom)  ?</span>
+            <p>Which dish is more filling:</p>
+            <span><b>{question.question1.title}</b> (top) or  </span>
+            <span><b>{question.question2.title}</b>  (bottom)  ?</span>
+            <div className='img_scroll'>
             <img src={question.question1.url} ></img>
             <br></br><span>Photo @ 1</span>
-            <br></br>
-                <img src={question.question2.url}></img>
+            <img src={question.question2.url}></img>
             <br></br><span>Photo @ 2</span>
-            
+            </div>
 
             <div>
                 <button className='btn' id='Top_btn'  onClick={() => {
@@ -80,9 +76,6 @@ function FoodCompareBody() {
                   dispatch(postData(getSendData(foodCompareType.bottom)));
                 }}>Bottom</button>
             </div>
-
-
-            <hr></hr>
            <Footer />
             
         </div>}
