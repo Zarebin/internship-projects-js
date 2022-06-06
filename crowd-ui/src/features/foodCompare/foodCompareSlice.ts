@@ -76,7 +76,7 @@ import { createSlice } from "@reduxjs/toolkit";
 import { RootState } from "../../app/store";
 const initialState = {
   question: {} as any,
-  isLoading: false,
+  isLoading: true,
 };
 const foodCompareSlice = createSlice({
   name: "foodCompare",

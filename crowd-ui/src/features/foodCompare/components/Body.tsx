@@ -22,13 +22,14 @@ function FoodCompareBody() {
     const dispatch = useAppDispatch();
 
     const question = useAppSelector(selectQuestion);
-    const isLoading = useAppSelector(selectLoading);
+    let isLoading = useAppSelector(selectLoading);
 
     console.log("Body Loading:",isLoading );
 
 
     // debugger;
     useEffect(() => {
+      isLoading = false;
       //debugger;
       console.log("useEffect 1");
       if (!isLoading) {
@@ -54,15 +55,15 @@ function FoodCompareBody() {
     
     return (
         <>
-        {isLoading ?? <p> please wait </p>}
-        {!isLoading ?? 
+        {isLoading && <p> please wait </p>}
+        {!isLoading && 
           <div className='container'>
             <Header/>
             <p>Which dish is more filling:</p><span>{question.question1.title} (top) or  </span><span>{question.question2.title}  (bottom)  ?</span>
-            <img  ></img>
+            <img src={question.question1.url} ></img>
             <br></br><span>Photo @ 1</span>
             <br></br>
-                <img ></img>
+                <img src={question.question2.url}></img>
             <br></br><span>Photo @ 2</span>
             
 
@@ -86,7 +87,9 @@ function FoodCompareBody() {
             
         </div>}
         </>
+        
     );
+    
 }
 
 export default FoodCompareBody;
