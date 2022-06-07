@@ -4,28 +4,23 @@ import {
   takeEvery,
   select,
   SagaReturnType,
-} from "redux-saga/effects";
+} from 'redux-saga/effects';
 // import Api from '...'
-import { fetchQuestion, PostUserData } from "./api";
-import { GET_ASYNC_NEW_PHOTO, POST_DATA } from "./Actions";
+import { fetchQuestion, PostUserData } from './api';
+import { GET_ASYNC_NEW_PHOTO, POST_DATA } from './Actions';
 import {
-  getCategories,
   setLoading,
   selectCategoryTitle,
   getPhoto,
   clearQuestion,
-} from "./imageLabelVerificationSlice";
-import { useAppSelector } from "../../app/hooks";
+} from './imageLabelVerificationSlice';
 
 type fetchDataType = SagaReturnType<typeof selectCategoryTitle>;
-enum NumberType {
-  zero = 0,
-}
 
 // worker Saga: will be fired on USER_FETCH_REQUESTED actions
-function* getAsyncPhoto(action: any) {
+function* getAsyncPhoto() {
   const currentCategoryTitle: fetchDataType = yield select(selectCategoryTitle);
-  //console.log("You are in SAGA for photo");
+  // console.log("You are in SAGA for photo");
   const question: fetchDataType = yield call(
     fetchQuestion(currentCategoryTitle)
   );
@@ -34,11 +29,11 @@ function* getAsyncPhoto(action: any) {
 }
 
 function* postUsersFetch(action: any) {
-  //FIXME: this should be get from userSelector
+  //  FIXME: this should be get from userSelector
   const userId = 0;
   const data = action.payload;
   yield put(setLoading(true));
-  //@ts-ignore
+  // @ts-ignore
   const response = yield call(PostUserData, data, userId);
 
   if (response.status === 200) {

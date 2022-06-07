@@ -1,16 +1,11 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
-import CategoryItem from "../category-item/Image-category-item.component";
-import { Link } from "react-router-dom";
-import { useAppDispatch, useAppSelector } from "../../../../app/hooks";
-import {
-  setCategory,
-  getCategories,
-  selectCategories,
-} from "../../imageLabelVerificationSlice";
-import { useEffect } from "react";
-
-import { categories } from "../../Data";
+import { useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
+import CategoryItem from '../category-item/Image-category-item.component';
+import { useAppDispatch, useAppSelector } from '../../../../app/hooks';
+import { setCategory, getCategories, selectCategories } from '../../imageLabelVerificationSlice';
+import categories from '../../Data';
 
 const ImageLabelHome = () => {
   const allCategories = categories;
@@ -18,8 +13,6 @@ const ImageLabelHome = () => {
   const dispatch = useAppDispatch();
 
   const categoriesState = useAppSelector(selectCategories);
-
-  //console.log(allCategories.data)
 
   useEffect(() => {
     dispatch(getCategories(allCategories.data));
@@ -42,7 +35,7 @@ const ImageLabelHome = () => {
             <Link
               key={category.id}
               onClick={() => {
-                console.log(`selected category :`, { category });
+                console.log('selected category :', { category });
                 dispatch(setCategory(category));
               }}
               to={`/imageLabelQuestions?query=${category.title}`}

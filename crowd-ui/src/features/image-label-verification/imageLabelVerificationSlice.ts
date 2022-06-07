@@ -1,37 +1,30 @@
-import { createSlice } from "@reduxjs/toolkit";
-import { RootState } from "../../app/store";
+import { createSlice } from '@reduxjs/toolkit';
+import { RootState } from '../../app/store';
 
-export interface imageLabelVerificationState {
-  categoryTitle: string;
-  categories: any;
-  selectedCategory: any;
-  newPhoto: any;
-  isLoading: boolean;
-}
-const initialState: imageLabelVerificationState = {
-  categoryTitle: "",
-  categories: [],
-  selectedCategory: {},
-  newPhoto: {},
+const initialState = {
+  categoryTitle: '' as any,
+  categories: [] as any,
+  selectedCategory: {} as any,
+  newPhoto: {} as any,
   isLoading: false,
 };
 
 export const imageLabelVerificationSlice = createSlice({
-  name: "category",
+  name: 'category',
   initialState,
   reducers: {
     setCategory: (state, action) => {
       state.selectedCategory = action.payload;
-      //console.log("Selected category : ",state.selectedCategory);
+      //  console.log("Selected category : ",state.selectedCategory);
     },
     getCategories: (state, action) => {
       state.categories = action.payload;
-      //console.log("getCategories is executed");
+      //  console.log("getCategories is executed");
       console.log(state.categories);
     },
     getPhoto: (state, action) => {
       state.newPhoto = action.payload;
-      //console.log("get Photo is executed")
+      //  console.log("get Photo is executed")
     },
     setCategorytitle: (state, action) => {
       state.categoryTitle = action.payload;
@@ -46,22 +39,12 @@ export const imageLabelVerificationSlice = createSlice({
 });
 
 export const {
-  getPhoto,
-  setCategory,
-  getCategories,
-  setCategorytitle,
-  setLoading,
-  clearQuestion,
+  getPhoto, setCategory, getCategories, setCategorytitle, setLoading, clearQuestion
 } = imageLabelVerificationSlice.actions;
 
-export const selectPhoto = (state: RootState) =>
-  state.imageLabelVerification.newPhoto;
-export const selectCategory = (state: RootState) =>
-  state.imageLabelVerification.selectedCategory;
-export const selectCategories = (state: RootState) =>
-  state.imageLabelVerification.categories;
-export const selectCategoryTitle = (state: RootState) =>
-  state.imageLabelVerification.categoryTitle;
-export const selectLoading = (state: RootState) =>
-  state.imageLabelVerification.isLoading;
+export const selectPhoto = (state: RootState) => state.imageLabelVerification.newPhoto;
+export const selectCategory = (state: RootState) => state.imageLabelVerification.selectedCategory;
+export const selectCategories = (state: RootState) => state.imageLabelVerification.categories;
+export const selectCategoryTitle = (state: RootState) => state.imageLabelVerification.categoryTitle;
+export const selectLoading = (state: RootState) => state.imageLabelVerification.isLoading;
 export default imageLabelVerificationSlice.reducer;
