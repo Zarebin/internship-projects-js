@@ -1,11 +1,12 @@
-import { createSlice } from "@reduxjs/toolkit";
-import { RootState } from "../../app/store";
+import { createSlice } from '@reduxjs/toolkit';
+import { RootState } from '../../app/store';
+
 const initialState = {
   question: {} as any,
   isLoading: true,
 };
 const sentimentSlice = createSlice({
-  name: "sentiment",
+  name: 'sentiment',
   initialState,
   reducers: {
     setQuestion: (state, action) => {
@@ -21,12 +22,11 @@ const sentimentSlice = createSlice({
   },
 });
 
-export const selectLoading = (state: RootState) =>
-  state.sentimentReducer.isLoading;
-export const selectQuestion = (state: RootState) =>
-  state.sentimentReducer.question;
+// @ts-ignore
+export const selectLoading = (state: RootState) => state.sentimentReducer.isLoading;
+// @ts-ignore
+export const selectQuestion = (state: RootState) => state.sentimentReducer.question;
 
-export const { setQuestion, setLoading, clearQuestion } =
-  sentimentSlice.actions;
+export const { setQuestion, setLoading, clearQuestion } = sentimentSlice.actions;
 
 export default sentimentSlice.reducer;

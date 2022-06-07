@@ -1,7 +1,9 @@
-import { call, put, SagaReturnType, takeEvery } from "redux-saga/effects";
-import { fetchUsers, postUserData } from "./sentimentAPI";
-import { setQuestion, setLoading, clearQuestion } from "./sentimentSlice";
-import { GET_USERS_FETCH, POST_DATA } from "./actions";
+import {
+  call, put, SagaReturnType, takeEvery,
+} from 'redux-saga/effects';
+import { fetchUsers, postUserData } from './sentimentAPI';
+import { setQuestion, setLoading, clearQuestion } from './sentimentSlice';
+import { GET_USERS_FETCH, POST_DATA } from './actions';
 
 type FetchUserResponseType = SagaReturnType<typeof fetchUsers>;
 type PostUserResponseType = SagaReturnType<typeof postUserData>;
@@ -13,10 +15,11 @@ function* GetUsersFetch() {
 }
 
 function* postUsersFetch(action: any) {
-  //#FIXME: this should be get from userSelector
+  // #FIXME: this should be get from userSelector
   const userId = 0;
   const data = action.payload;
   yield put(setLoading(true));
+  //@ts-ignore
   const response: PostUserResponseType = yield call(postUserData, data, userId);
   if (response.status === 200) {
     yield put(clearQuestion());

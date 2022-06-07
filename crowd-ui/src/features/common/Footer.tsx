@@ -1,10 +1,11 @@
-import { useAppSelector, useAppDispatch } from "../../app/hooks";
-import { postData } from "../sentiment/actions";
-import { selectQuestion } from "../sentiment/sentimentSlice";
-import "./Footer.scss";
+import React from 'react';
+import { useAppSelector, useAppDispatch } from '../../app/hooks';
+import { postData } from '../sentiment/actions';
+import { selectQuestion } from '../sentiment/sentimentSlice';
+import './Footer.scss';
 
-import RightFlag from "../../assest/right.png";
-import LeftFlag from "../../assest/left.png";
+import RightFlag from '../../assest/right.png';
+import LeftFlag from '../../assest/left.png';
 
 enum FooterType {
   skip = 0,
@@ -15,16 +16,15 @@ function Footer() {
   const dispatch = useAppDispatch();
   const question = useAppSelector(selectQuestion);
 
-  const getSendData = (sentiment: any) => {
-    return {
-      questionId: question.id,
-      sentiment: sentiment,
-    };
-  };
+  const getSendData = (sentiment: any) => ({
+    questionId: question.id,
+    sentiment,
+  });
 
   return (
     <div className="footer">
       <button
+        type="button"
         onClick={() => {
           dispatch(postData(getSendData(FooterType.previous)));
         }}
@@ -33,6 +33,7 @@ function Footer() {
         <img src={LeftFlag} alt="leftFlag" />
       </button>
       <button
+        type="button"
         onClick={() => {
           dispatch(postData(getSendData(FooterType.skip)));
         }}

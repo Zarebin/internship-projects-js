@@ -1,8 +1,8 @@
-import { configureStore, ThunkAction, Action } from "@reduxjs/toolkit";
-import counterReducer from "../features/counter/counterSlice";
-import createSagaMiddleware from "redux-saga";
-import rootSaga from "./sagas";
-import sentimentReducer from "../features/sentiment/sentimentSlice";
+import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit';
+import createSagaMiddleware from 'redux-saga';
+import counterReducer from '../features/counter/counterSlice';
+import rootSaga from './sagas';
+import sentimentReducer from '../features/sentiment/sentimentSlice';
 
 const sagaMiddleware = createSagaMiddleware();
 const store = configureStore({

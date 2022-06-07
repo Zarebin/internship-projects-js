@@ -1,10 +1,10 @@
-import "./Sentiment.scss";
-import { useEffect } from "react";
-import { getUsersFetch, postData } from "./actions";
-import { useAppSelector, useAppDispatch } from "../../app/hooks";
-import { selectLoading, selectQuestion } from "./sentimentSlice";
-import Header from "../common/Header";
-import Footer from "../common/Footer";
+import './Sentiment.scss';
+import React, { useEffect } from 'react';
+import { getUsersFetch, postData } from './actions';
+import { useAppSelector, useAppDispatch } from '../../app/hooks';
+import { selectLoading, selectQuestion } from './sentimentSlice';
+import Header from '../common/Header';
+import Footer from '../common/Footer';
 
 enum SentimentType {
   happy = 3,
@@ -16,21 +16,19 @@ function Sentiment() {
   const dispatch = useAppDispatch();
 
   const question = useAppSelector(selectQuestion);
-  let isLoading = useAppSelector(selectLoading);
+  const isLoading = useAppSelector(selectLoading);
 
   useEffect(() => {
-    //isLoading = false;
+    // isLoading = false;
     if (isLoading) {
       dispatch(getUsersFetch());
     }
   }, [isLoading]);
 
-  const getSendData = (sentiment: SentimentType) => {
-    return {
-      questionId: question.id,
-      sentiment: sentiment,
-    };
-  };
+  const getSendData = (sentiment: SentimentType) => ({
+    questionId: question.id,
+    sentiment,
+  });
 
   return (
     <>
@@ -47,23 +45,29 @@ function Sentiment() {
             </div>
             <div className="rating">
               <button
+                aria-label="sad"
+                type="button"
                 id="sad"
                 onClick={() => {
                   dispatch(postData(getSendData(SentimentType.sad)));
                 }}
-              ></button>
+              />
               <button
+                aria-label="poker"
+                type="button"
                 id="poker"
                 onClick={() => {
                   dispatch(postData(getSendData(SentimentType.poker)));
                 }}
-              ></button>
+              />
               <button
+                aria-label="happy"
+                type="button"
                 id="happy"
                 onClick={() => {
                   dispatch(postData(getSendData(SentimentType.happy)));
                 }}
-              ></button>
+              />
             </div>
           </div>
           <Footer />

@@ -1,19 +1,20 @@
-import { Link } from "react-router-dom";
+import React from 'react';
+import { Link } from 'react-router-dom';
 
-const Home = () => {
+function Home() {
   return (
     <div>
       <Link to="/">
-        <button>Image Label Verification</button>
+        <button type="button">Image Label Verification</button>
       </Link>
       <Link to="/counter">
-        <button>Counter</button>
+        <button type="button">Counter</button>
       </Link>
       <Link to="/sentiment">
-        <button>Sentiment</button>
+        <button type="button">Sentiment</button>
       </Link>
     </div>
   );
-};
+}
 
 export default Home;
