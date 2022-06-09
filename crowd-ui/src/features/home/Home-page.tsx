@@ -4,10 +4,10 @@ import { Link } from 'react-router-dom';
 const Home = () => (
   <div>
     <Link to="/imageLabelVerification">
-      <button type="submit">Image Label Verification</button>
+      <button type="button">Image Label Verification</button>
     </Link>
     <Link to="/counter">
-      <button type="submit">Counter</button>
+      <button type="button">Counter</button>
     </Link>
   </div>
 );
