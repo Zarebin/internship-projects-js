@@ -7,9 +7,6 @@ function Home() {
       <Link to="/">
         <button type="button">Image Label Verification</button>
       </Link>
-      <Link to="/counter">
-        <button type="button">Counter</button>
-      </Link>
       <Link to="/sentiment">
         <button type="button">Sentiment</button>
       </Link>

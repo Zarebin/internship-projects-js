@@ -19,7 +19,6 @@ function* postUsersFetch(action: any) {
   const userId = 0;
   const data = action.payload;
   yield put(setLoading(true));
-  //@ts-ignore
   const response: PostUserResponseType = yield call(postUserData, data, userId);
   if (response.status === 200) {
     yield put(clearQuestion());
