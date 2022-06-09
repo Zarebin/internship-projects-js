@@ -20,7 +20,7 @@ export const imageLabelVerificationSlice = createSlice({
     getCategories: (state, action) => {
       state.categories = action.payload;
       //  console.log("getCategories is executed");
-      console.log(state.categories);
+      // console.log(state.categories);
     },
     getPhoto: (state, action) => {
       state.newPhoto = action.payload;
@@ -39,7 +39,7 @@ export const imageLabelVerificationSlice = createSlice({
 });
 
 export const {
-  getPhoto, setCategory, getCategories, setCategorytitle, setLoading, clearQuestion
+  getPhoto, setCategory, getCategories, setCategorytitle, setLoading, clearQuestion,
 } = imageLabelVerificationSlice.actions;
 
 export const selectPhoto = (state: RootState) => state.imageLabelVerification.newPhoto;

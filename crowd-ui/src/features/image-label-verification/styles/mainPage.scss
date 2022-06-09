@@ -2,6 +2,7 @@
   padding: 0;
   margin: 0;
   font-family: 'Open Sans', sans-serif;
+  text-decoration: none;
 }
 
 .main-container {
@@ -9,6 +10,7 @@
   flex-direction: column;
   justify-content: center;
   width: 480px;
+  height: 800px;
   margin: auto;
   align-content: center;
   background-color: rgb(245, 241, 247);
@@ -35,7 +37,7 @@
   justify-content: space-between;
 }
 
-.text-1 {
+.text-style {
   margin-left: 20px;
   margin-bottom: 5px;
 }

@@ -1,12 +1,10 @@
-import { useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faAngleLeft, faAngleRight } from '@fortawesome/free-solid-svg-icons';
+import React, { useEffect } from 'react';
 import { selectLoading, selectPhoto, setCategorytitle } from './imageLabelVerificationSlice';
 import { useAppSelector, useAppDispatch } from '../../app/hooks';
 import { getAsyncPhotoWithSaga, postData } from './Actions';
 
 import Header from './components/Header/Header';
+import Footer from './components/Footer/Footer';
 
 enum AnswerType {
   yes = 1,
@@ -33,34 +31,69 @@ const ImageLabelQuestions = () => {
     }
   }, [isLoading]);
 
-  console.log('isLoading', isLoading);
-  console.log('current photo', currentPhoto);
-  const CreateAnswer: any = (answer: any) => {
-    console.log('userAnswer :', answer);
-    return {
+  // console.log('isLoading', isLoading);
+  // console.log('current photo', currentPhoto);
+  const CreateAnswer: any = (answer: any) => (
+    {
       questionId: currentPhoto.id,
       answer,
-    };
-  };
+    }
+  );
 
   return (
     <>
-      {isLoading && <p> Photo is Loading </p>}
+      {isLoading && (
+        <div className="main-container">
+          <div className="inner-container">
+            <Header />
+            <div className="content-container">
+              <div className="question-container">
+                <p>{`Does this image contain ${categoryTitle}?`}</p>
+              </div>
+
+              <div className="image-container">
+                <p> Image is Loading ...</p>
+              </div>
+
+              <div className="image-copy-right">
+                <p>All rights Reserved c 2022</p>
+              </div>
+            </div>
+            <div className="yes-no-container">
+              <button
+                type="submit"
+                className="disabled-btn"
+              >
+                No
+              </button>
+              <button
+                type="submit"
+                className="disabled-btn"
+              >
+                Yes
+              </button>
+            </div>
+          </div>
+          <div className="line" />
+          <Footer />
+        </div>
+      )}
       {!isLoading && (
         <div className="main-container">
           <div className="inner-container">
             <Header />
+            <div className="content-container">
+              <div className="question-container">
+                <p>{`Does this image contain ${categoryTitle}?`}</p>
+              </div>
 
-            <div className="question-container">
-              <p>{`Does this image contain ${categoryTitle}?`}</p>
-            </div>
+              <div className="image-container">
+                <img className="img-display" alt="" src={currentPhoto.qImageUrl} />
+              </div>
 
-            <div className="image-container">
-              <img className="img-display" alt="" src={currentPhoto.qImageUrl} />
-            </div>
-
-            <div className="image-copy-right">
-              <p>All rights Reserved c 2022</p>
+              <div className="image-copy-right">
+                <p>All rights Reserved c 2022</p>
+              </div>
             </div>
             <div className="yes-no-container">
               <button
@@ -82,24 +115,9 @@ const ImageLabelQuestions = () => {
                 Yes
               </button>
             </div>
-            <div className="line" />
-            <div className="flex-row-justify-between padding-top">
-              <Link to="/" className="cursor-pointer">
-                <FontAwesomeIcon icon={faAngleLeft} /> Previous
-              </Link>
-
-              <Link
-                to="/"
-                className="margin-icon cursor-pointer"
-                onClick={() => {
-                  dispatch(postData(CreateAnswer(AnswerType.skip)));
-                }}
-              >
-                Skip
-                <FontAwesomeIcon icon={faAngleRight} />
-              </Link>
-            </div>
           </div>
+          <div className="line" />
+          <Footer />
         </div>
       )}
     </>

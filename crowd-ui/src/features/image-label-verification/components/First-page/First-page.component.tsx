@@ -1,4 +1,5 @@
-import { useEffect } from 'react';
+import React, { useEffect } from 'react';
+
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
@@ -27,7 +28,7 @@ const ImageLabelHome = () => {
               <FontAwesomeIcon icon={faArrowLeft} />
             </Link>
           </div>
-          <h3 className="text-1">Image Label Verification</h3>
+          <h3 className="text-style">Image Label Verification</h3>
         </div>
         <h3>Choose image category</h3>
         <div className="categories-container">
@@ -35,7 +36,7 @@ const ImageLabelHome = () => {
             <Link
               key={category.id}
               onClick={() => {
-                console.log('selected category :', { category });
+                // console.log('selected category :', { category });
                 dispatch(setCategory(category));
               }}
               to={`/imageLabelQuestions?query=${category.title}`}

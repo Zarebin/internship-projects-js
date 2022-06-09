@@ -9,5 +9,6 @@ export const fetchQuestion: any = (categoryTitle: any) => async () => {
 };
 
 export const PostUserData = async (data: any, userId: any) => {
-  request.post('/user.json', { ...data, userId });
+  const result = await request.post('/user.json', { ...data, userId });
+  return result;
 };
