@@ -22,9 +22,8 @@ const sentimentSlice = createSlice({
   },
 });
 
-// @ts-ignore
 export const selectLoading = (state: RootState) => state.sentimentReducer.isLoading;
-// @ts-ignore
+
 export const selectQuestion = (state: RootState) => state.sentimentReducer.question;
 
 export const { setQuestion, setLoading, clearQuestion } = sentimentSlice.actions;

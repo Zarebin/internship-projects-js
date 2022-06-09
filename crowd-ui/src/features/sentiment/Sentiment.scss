@@ -45,20 +45,19 @@ $background-color: white;
       height: 40px;
       border-radius: 50%;
       border: none;
-      outline: 1px solid gray;
       cursor: pointer;
     }
     #happy {
-      background-image: url("../../assest/happy.png");
+      background-image: url("../../assest/happy.svg");
       background-size: cover;
     }
     #sad {
-      background-image: url("../../assest/sad.png");
+      background-image: url("../../assest/sad.svg");
       background-size: cover;
     }
     #poker {
-      background-image: url("../../assest/poker.png");
-      background-size: cover;
+      background-image: url("../../assest/poker.svg");
+     background-size:auto;
     }
   }
 }

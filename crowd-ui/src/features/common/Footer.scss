@@ -12,22 +12,19 @@
     color: rgb(204, 129, 166);
     border: none;
     cursor: pointer;
-    img {
-      width: 1rem;
-      height: 1rem;
-      color: gray;
-    }
+   
     &:disabled {
       color: gray;
     }
   }
-  button:first-child img {
+  button:first-child svg {
     float: left;
     margin-right: 0.1rem;
   }
   button:last-child {
-    img {
+    svg {
       float: right;
+      margin-right: 0.4rem;
     }
     span {
       margin-left: 1.5rem;

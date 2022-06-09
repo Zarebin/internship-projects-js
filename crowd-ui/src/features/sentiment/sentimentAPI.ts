@@ -1,14 +1,13 @@
-import axios from 'axios';
-import request from '../../helper/requestConfig';
+import request, { dataRequest } from '../../helper/requestConfig';
 
-export const fetchUsers = async () => {
-  const resp = await axios.get('https://jsonplaceholder.typicode.com/albums');
+export const fetchSentimentQuestion = async () => {
+  const resp = await dataRequest.get('/albums');
   const randomData = resp.data[Math.floor(Math.random() * resp.data.length)];
-  const outPut = { data: randomData, status: resp.status };
-  return outPut;
+  const response = { data: randomData, status: resp.status };
+  return response;
 };
 
-export const postUserData = async (data: any, userId: any) => {
+export const postSentimentData = async (data: any, userId: any) => {
   const result = await request.post('/user.json', { ...data, userId });
   return result;
 };
