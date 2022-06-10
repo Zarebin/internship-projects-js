@@ -20,9 +20,12 @@ hr{
     overflow-y: auto;
     flex-direction: column;
     white-space: nowrap;
-    -webkit-overflow-scrolling: touch;
+    // -webkit-overflow-scrolling: touch;
     direction: ltr;
 }
+.img_scroll::-webkit-scrollbar {
+    display: none;
+  }
 .btn{
     padding: 10px;
     margin: 10px;

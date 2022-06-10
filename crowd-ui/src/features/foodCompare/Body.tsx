@@ -1,15 +1,11 @@
 import './style.scss';
+import { useEffect } from 'react';
 import Header from './common/Header';
-import Footer from "./common/Footer";
-import { getUsersFetch, postData } from "./actions";
-import { useAppSelector, useAppDispatch } from "../../app/hooks";
-import { useEffect } from "react";
-import { selectLoading, selectQuestion } from "./foodCompareSlice";
-import "../../../src/App.scss";
-
-
-
-
+import Footer from './common/Footer';
+import { getUsersFetch, postData } from './actions';
+import { selectLoading, selectQuestion } from './foodCompareSlice';
+import { useAppSelector, useAppDispatch } from '../../app/hooks';
+import '../../App.scss';
 
 enum foodCompareType {
   bottom = 3,
@@ -19,70 +15,98 @@ enum foodCompareType {
 }
 
 function FoodCompareBody() {
-    const dispatch = useAppDispatch();
+  const dispatch = useAppDispatch();
 
-    const question = useAppSelector(selectQuestion);
-    let isLoading = useAppSelector(selectLoading);
+  const question = useAppSelector(selectQuestion);
+  let isLoading = useAppSelector(selectLoading);
 
-    console.log("Body Loading:",isLoading );
+  console.log('Body Loading:', isLoading);
 
+  useEffect(() => {
+    isLoading = false;
+    if (!isLoading) {
+      dispatch(getUsersFetch());
+    }
+  }, [isLoading]);
 
+  console.log('isLoading', isLoading);
+  console.log('input array', question);
 
-    useEffect(() => {
-      isLoading = false;
-      if (!isLoading) {
-        dispatch( getUsersFetch());
-      }
-    }, [isLoading]);
-  
+  const getSendData = (foodCompare:foodCompareType) => ({
+    questionId: question.id,
+    foodCompare,
+  });
 
-    
-    console.log("isLoading", isLoading);
-    console.log("input array", question);
-  
-    const getSendData = (foodCompare:foodCompareType) => {
-      return {
-        questionId: question.id,
-        foodCompare: foodCompare,
-      };
-    };
-    
-    return (
-        <>
-        {isLoading && <p> please wait </p>}
-        {!isLoading && 
-          <div className='container'>
-            <Header/>
+  return (
+    <>
+      {isLoading && <p> please wait </p>}
+      {!isLoading
+          && (
+          <div className="container">
+            <Header />
             <p>Which dish is more filling:</p>
-            <span><b>{question.question1.title}</b> (top) or  </span>
-            <span><b>{question.question2.title}</b>  (bottom)  ?</span>
-            <div className='img_scroll'>
-            <img src={question.question1.url} ></img>
-            <br></br><span>Photo @ 1</span>
-            <img src={question.question2.url}></img>
-            <br></br><span>Photo @ 2</span>
+            <span>
+              <b>{question.question1.title}</b>
+              {' '}
+              (top) or
+            </span>
+            <span>
+              <b>{question.question2.title}</b>
+              {' '}
+              (bottom)  ?
+            </span>
+            <div className="img_scroll">
+
+              <img src={question.question1.url} alt="Top" />
+              <br />
+              <span>Photo @ 1</span>
+
+              <img src={question.question2.url} alt="Bottom" />
+              <br />
+              <span>Photo @ 2</span>
             </div>
 
             <div>
-                <button className='btn' id='Top_btn'  onClick={() => {
+              <button
+                type="button"
+                className="btn"
+                id="Top_btn"
+                onClick={() => {
                   dispatch(postData(getSendData(foodCompareType.top)));
-                }}>Top</button>
+                }}
+              >
+                Top
+              </button>
 
-                <button className='btn' id='Similar_btn' onClick={() => {
+              <button
+                type="button"
+                className="btn"
+                id="Similar_btn"
+                onClick={() => {
                   dispatch(postData(getSendData(foodCompareType.similar)));
-                }}>Similar</button>
+                }}
+              >
+                Similar
+              </button>
 
-                <button className='btn' id='Bottom_btn' onClick={() => {
+              <button
+                type="button"
+                className="btn"
+                id="Bottom_btn"
+                onClick={() => {
                   dispatch(postData(getSendData(foodCompareType.bottom)));
-                }}>Bottom</button>
+                }}
+              >
+                Bottom
+              </button>
             </div>
-           <Footer />
-            
-        </div>}
-        </>
-        
-    );
-    
+            <Footer />
+
+          </div>
+          )}
+    </>
+
+  );
 }
 
 export default FoodCompareBody;

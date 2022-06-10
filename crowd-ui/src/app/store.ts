@@ -1,5 +1,4 @@
 import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit';
-import counterReducer from '../features/counter/counterSlice';
 import createSagaMiddleware from 'redux-saga';
 import rootSaga from './sagas';
 import foodCompareReducer from '../features/foodCompare/foodCompareSlice';
@@ -9,7 +8,7 @@ const sagaMiddleware = createSagaMiddleware();
 
 const store = configureStore({
   reducer: {
-    counter: counterReducer,
+    // counter: counterReducer,
     foodCompareReducer,
   },
   middleware: [sagaMiddleware],
