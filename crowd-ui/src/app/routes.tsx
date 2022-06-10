@@ -1,17 +1,17 @@
-import { Routes, Route } from 'react-router-dom';
+import React from 'react';
+import { Route } from 'react-router-dom';
 import Home from '../features/home/Home-page';
-import {Counter} from '../features/counter/Counter'
-import {TranslationValidation} from '../features/translationValidation/TranslationValidation'
+import Counter from '../features/counter/Counter';
+import TranslationValidation from '../features/translationValidation/TranslationValidation';
 
-const AppAllRoutes = () =>{
-    return(
-        <Routes>
-            <Route path='/' element={<Home />}/>
-            <Route path='/counter' element={<Counter />}/>
-            <Route path='/translationValidation' element={<TranslationValidation />}/>
-        </Routes>
-    )
-
+function Routes() {
+  return (
+    <>
+      <Route exact path="/" component={Home} />
+      <Route exact path="/counter" component={Counter} />
+      <Route exact path="/translationValidation" component={TranslationValidation} />
+    </>
+  );
 }
 
-export default AppAllRoutes
+export default Routes;

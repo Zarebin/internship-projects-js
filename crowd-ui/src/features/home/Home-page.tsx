@@ -1,18 +1,14 @@
-import { Link } from 'react-router-dom'
+import React from 'react';
+import { Link } from 'react-router-dom';
 
+export default function Home() {
+  return (
+    <div>
+      <Link to="/"><button type="button">Image Label Verification</button></Link>
+      <Link to="/counter"><button type="button">Counter</button></Link>
+      <Link to="/translationValidation"><button type="button">Translation Validation</button></Link>
 
+    </div>
 
-const Home = () => {
-    return (
-        <div>
-            <Link to="/"><button>Image Label Verification</button></Link>
-            <Link to="/counter"><button>Counter</button></Link>
-            <Link to="/translationValidation"><button>Translation Validation</button></Link>
-
-        </div>
-
-    )
+  );
 }
-
-
-export default Home;

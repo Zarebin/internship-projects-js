@@ -1,10 +1,6 @@
-
-body {
-  /*background-color: antiquewhite;*/
-}
-.App {
+ .App {
   width: 50vh;
   height: 80vh;
   background-color: white;
   margin: 30px auto;
-}
+ }
