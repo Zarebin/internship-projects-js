@@ -1,7 +1,7 @@
 import React from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faAngleLeft, faAngleRight } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
+import { KeyboardArrowRight } from '@mui/icons-material';
+import { FormattedMessage } from 'react-intl';
 import { selectPhoto, selectCategoryTitle, selectLoading } from '../../imageLabelVerificationSlice';
 import { useAppSelector, useAppDispatch } from '../../../../app/hooks';
 import { postData } from '../../Actions';
@@ -10,7 +10,6 @@ enum AnswerType {
   yes = 1,
   no = 2,
   skip = 0,
-  previous = -1,
 }
 
 const Footer = () => {
@@ -25,29 +24,22 @@ const Footer = () => {
   });
 
   return (
-    <div className="flex-row-justify-between">
+    <div className="footer">
       <Link
         to={`/imageLabelQuestions?query=${categoryTitle}`}
-        className={!isLoading ? 'margin-icon cursor-pointer' : 'margin-icon disabled-item'}
+        className={!isLoading ? 'footer__next cursor-pointer' : ' footer__next disabled-item'}
         onClick={() => {
           dispatch(postData(CreateAnswer(AnswerType.skip)));
         }}
       >
-        <FontAwesomeIcon icon={faAngleLeft} />
-        {' '}
-        <span>  Previous</span>
-      </Link>
-
-      <Link
-        to={`/imageLabelQuestions?query=${categoryTitle}`}
-        // className={`${isLoading} : margin-icon cursor-pointer ? margin-icon disabled-item`}
-        className={!isLoading ? 'margin-icon cursor-pointer' : 'margin-icon disabled-item'}
-        onClick={() => {
-          dispatch(postData(CreateAnswer(AnswerType.skip)));
-        }}
-      >
-        <span>Skip   </span>
-        <FontAwesomeIcon icon={faAngleRight} />
+        <div className="flex-row-justify-start">
+          <div>
+            <KeyboardArrowRight />
+          </div>
+          <div>
+            <FormattedMessage id="shared.ignore" />
+          </div>
+        </div>
       </Link>
     </div>
   );

@@ -25,7 +25,7 @@ module.exports = {
     sourceType: 'module',
   },
   plugins: ['react', '@typescript-eslint', 'react-hooks'],
-  ignorePatterns: ['*.svg', '*.scss', '*.css'],
+  ignorePatterns: ['*.svg', '*.scss', '*.css', '*.eot', '*.ttf', '*.woff', '*.woff2', '*.txt'],
   rules: {
 
     // to solve Error of  " Assignment to property of function parameter 'state' ""

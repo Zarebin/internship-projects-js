@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
+import { FormattedMessage } from 'react-intl';
 import { selectLoading, selectPhoto, setCategorytitle } from './imageLabelVerificationSlice';
 import { useAppSelector, useAppDispatch } from '../../app/hooks';
 import { getAsyncPhotoWithSaga, postData } from './Actions';
-
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
 
@@ -10,7 +10,6 @@ enum AnswerType {
   yes = 1,
   no = 2,
   skip = 0,
-  previous = -1,
 }
 
 const ImageLabelQuestions = () => {
@@ -39,85 +38,84 @@ const ImageLabelQuestions = () => {
       answer,
     }
   );
-
   return (
     <>
       {isLoading && (
-        <div className="main-container">
-          <div className="inner-container">
-            <Header />
-            <div className="content-container">
-              <div className="question-container">
-                <p>{`Does this image contain ${categoryTitle}?`}</p>
-              </div>
+        <div className="app-container">
+          <Header />
+          <div className="main-container">
+            <div className="inner-container">
+              <div className="content-container">
+                <div className="question-container">
+                  <FormattedMessage id="imageLabel.question" />
+                  {`${categoryTitle} `}
+                  <FormattedMessage id="imageLabel.see" />
+                </div>
 
-              <div className="image-container">
-                <p> Image is Loading ...</p>
+                <div className="image-container">
+                  <FormattedMessage id="imageLabel.imageIsLoading" />
+                </div>
               </div>
-
-              <div className="image-copy-right">
-                <p>All rights Reserved c 2022</p>
+              <div className="yes-no-container">
+                <button
+                  type="submit"
+                  className="disabled-btn"
+                >
+                  <FormattedMessage id="Answer.yes" />
+                </button>
+                <button
+                  type="submit"
+                  className="disabled-btn"
+                >
+                  <FormattedMessage id="Answer.no" />
+                </button>
               </div>
             </div>
-            <div className="yes-no-container">
-              <button
-                type="submit"
-                className="disabled-btn"
-              >
-                No
-              </button>
-              <button
-                type="submit"
-                className="disabled-btn"
-              >
-                Yes
-              </button>
-            </div>
+            <Footer />
           </div>
-          <div className="line" />
-          <Footer />
         </div>
       )}
       {!isLoading && (
-        <div className="main-container">
-          <div className="inner-container">
-            <Header />
-            <div className="content-container">
-              <div className="question-container">
-                <p>{`Does this image contain ${categoryTitle}?`}</p>
-              </div>
+        <div className="app-container">
+          <Header />
+          <div className="main-container">
+            <div className="inner-container">
+              {/* <Header /> */}
+              <div className="content-container">
+                <div className="question-container">
+                  <FormattedMessage id="imageLabel.question" />
+                  {`${categoryTitle} `}
+                  <FormattedMessage id="imageLabel.see" />
+                </div>
 
-              <div className="image-container">
-                <img className="img-display" alt="" src={currentPhoto.qImageUrl} />
-              </div>
+                <div className="image-container">
+                  <img className="img-display" alt="" src={currentPhoto.qImageUrl} />
+                </div>
 
-              <div className="image-copy-right">
-                <p>All rights Reserved c 2022</p>
+              </div>
+              <div className="yes-no-container">
+                <button
+                  type="submit"
+                  className="btn-1"
+                  onClick={() => {
+                    dispatch(postData(CreateAnswer(AnswerType.yes)));
+                  }}
+                >
+                  <FormattedMessage id="Answer.yes" />
+                </button>
+                <button
+                  type="submit"
+                  className="btn-1"
+                  onClick={() => {
+                    dispatch(postData(CreateAnswer(AnswerType.no)));
+                  }}
+                >
+                  <FormattedMessage id="Answer.no" />
+                </button>
               </div>
             </div>
-            <div className="yes-no-container">
-              <button
-                type="submit"
-                className="btn-1"
-                onClick={() => {
-                  dispatch(postData(CreateAnswer(AnswerType.no)));
-                }}
-              >
-                No
-              </button>
-              <button
-                type="submit"
-                className="btn-1"
-                onClick={() => {
-                  dispatch(postData(CreateAnswer(AnswerType.yes)));
-                }}
-              >
-                Yes
-              </button>
-            </div>
+            <Footer />
           </div>
-          <div className="line" />
-          <Footer />
         </div>
       )}
     </>

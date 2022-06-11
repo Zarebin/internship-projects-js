@@ -9,25 +9,23 @@
 .content-container {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   height: 87%;
 }
 .question-container {
   width: 100%;
   top: 0;
+  margin-bottom: 2rem;
 }
 
 .image-container {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-
+  justify-items: center;
   align-items: center;
 }
 .img-display {
   max-width: 100%;
   max-height: 100%;
-
   object-fit: contain;
 }
 
@@ -39,14 +37,13 @@
 }
 
 .yes-no-container {
-  height: 7%;
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
 }
 
 .btn-1 {
-  background-color: rgb(113, 180, 243);
+  background-color: rgb(85, 61, 220);
   width: 10rem;
   height: 2.5rem;
   border-radius: 0.4rem;
@@ -54,6 +51,7 @@
   margin-top: 0.3rem;
   border: none;
   cursor: pointer;
+  color: white;
 }
 .padding-top {
   padding-top: 1.4rem;

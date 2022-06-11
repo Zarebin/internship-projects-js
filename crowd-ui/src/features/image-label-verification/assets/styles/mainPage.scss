@@ -1,19 +1,27 @@
+@import "fonts";
+
 * {
   padding: 0;
   margin: 0;
-  font-family: 'Open Sans', sans-serif;
   text-decoration: none;
+  direction: rtl;
+  box-sizing: border-box;
+  font-family: "IRANYekan";
+}
+
+.app-container {
+  text-align: center;
 }
 
 .main-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 480px;
-  height: 800px;
+  width: 100%;
+  height: 92vh;
   margin: auto;
   align-content: center;
-  background-color: rgb(245, 241, 247);
+  background-color: rgb(255, 255, 255);
 }
 
 .inner-container {
@@ -21,7 +29,7 @@
   display: flex;
   flex-direction: column;
   margin: auto;
-  height: 100vh;
+  height: 90vh;
   padding-top: 15px;
 }
 
@@ -29,6 +37,7 @@
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
+  float: right;
 }
 
 .flex-row-justify-between {

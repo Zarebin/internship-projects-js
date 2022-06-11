@@ -24,7 +24,7 @@ export const imageLabelVerificationSlice = createSlice({
     },
     getPhoto: (state, action) => {
       state.newPhoto = action.payload;
-      //  console.log("get Photo is executed")
+      // console.log('get Photo is executed');
     },
     setCategorytitle: (state, action) => {
       state.categoryTitle = action.payload;

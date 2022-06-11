@@ -1,7 +1,7 @@
 import React from 'react';
 import './Image-category-item.styles.scss';
-import '../../styles/mainPage.scss';
-import '../../styles/secPage.scss';
+import '../../assets/styles/mainPage.scss';
+import '../../assets/styles/secPage.scss';
 
 const CategoryItem = ({ category }: any) => {
   const { imageUrl, title } = category;

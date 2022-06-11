@@ -6,9 +6,6 @@ const Home = () => (
     <Link to="/imageLabelVerification">
       <button type="button">Image Label Verification</button>
     </Link>
-    <Link to="/counter">
-      <button type="button">Counter</button>
-    </Link>
   </div>
 );
 

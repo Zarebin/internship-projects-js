@@ -2,121 +2,121 @@ const questions = {
   data: [
     {
       id: 1,
-      title: 'Dogs',
+      title: 'سگ',
       qImageUrl:
         'https://ssl.gstatic.com/social/villagephotoui/images/sprites/entity/thumbnail_m_0b48hv.jpg',
     },
     {
       id: 2,
-      title: 'Foods',
+      title: 'غذا',
       qImageUrl:
         'https://ssl.gstatic.com/social/villagephotoui/images/sprites/entity/thumbnail_m_01bjv.jpg',
     },
     {
       id: 3,
-      title: 'Buses',
+      title: 'اتوبوس',
       qImageUrl:
         'https://ssl.gstatic.com/social/villagephotoui/images/sprites/entity/boats.jpg',
     },
     {
       id: 4,
-      title: 'Boats',
+      title: 'قایق',
       qImageUrl:
         'https://ssl.gstatic.com/social/villagephotoui/images/sprites/entity/thumbnail_m_0b48hv.jpg',
     },
     {
       id: 5,
-      title: 'Dogs',
+      title: 'سگ',
       qImageUrl:
         'https://ssl.gstatic.com/social/villagephotoui/images/sprites/entity/thumbnail_m_04_tb.jpg',
     },
     {
       id: 5,
-      title: 'Dogs',
+      title: 'سگ',
       qImageUrl:
         'https://ssl.gstatic.com/social/villagephotoui/images/sprites/entity/thumbnail_m_0gjkl.jpg',
     },
     {
       id: 6,
-      title: 'Foods',
+      title: 'غذا',
       qImageUrl:
         'https://ssl.gstatic.com/social/villagephotoui/images/sprites/entity/thumbnail_m_04_tb.jpg',
     },
     {
       id: 7,
-      title: 'Buses',
+      title: 'اتوبوس',
       qImageUrl:
         'https://ssl.gstatic.com/social/villagephotoui/images/sprites/entity/thumbnail_m_04_tb.jpg',
     },
     {
       id: 8,
-      title: 'Boats',
+      title: 'قایق',
       qImageUrl:
         'https://ssl.gstatic.com/social/villagephotoui/images/sprites/entity/thumbnail_m_0gjkl.jpg',
     },
     {
       id: 9,
-      title: 'Dogs',
+      title: 'سگ',
       qImageUrl:
         'https://ssl.gstatic.com/social/villagephotoui/images/sprites/entity/thumbnail_m_0gjkl.jpg',
     },
     {
       id: 10,
-      title: 'Dogs',
+      title: 'سگ',
       qImageUrl:
         'https://ssl.gstatic.com/social/villagephotoui/images/sprites/entity/food.jpg',
     },
     {
       id: 11,
-      title: 'Foods',
+      title: 'غذا',
       qImageUrl:
         'https://ssl.gstatic.com/social/villagephotoui/images/sprites/entity/thumbnail_m_09j06.jpg',
     },
     {
       id: 12,
-      title: 'Maps',
+      title: 'نقشه',
       qImageUrl:
         'https://ssl.gstatic.com/social/villagephotoui/images/sprites/entity/boats.jpg',
     },
     {
       id: 13,
-      title: 'Maps',
+      title: 'نقشه',
       qImageUrl:
         'https://ssl.gstatic.com/social/villagephotoui/images/sprites/entity/thumbnail_m_04_tb.jpg',
     },
     {
       id: 14,
-      title: 'Dogs',
+      title: 'سگ',
       qImageUrl:
         'https://ssl.gstatic.com/social/villagephotoui/images/sprites/entity/thumbnail_m_09j06.jpg',
     },
     {
       id: 15,
-      title: 'Dogs',
+      title: 'سگ',
       qImageUrl:
         'https://ssl.gstatic.com/social/villagephotoui/images/sprites/entity/thumbnail_m_04_tb.jpg',
     },
     {
       id: 16,
-      title: 'Maps',
+      title: 'نقشه',
       qImageUrl:
         'https://ssl.gstatic.com/social/villagephotoui/images/sprites/entity/thumbnail_m_09j06.jpg',
     },
     {
       id: 17,
-      title: 'Maps',
+      title: 'نقشه',
       qImageUrl:
         'https://ssl.gstatic.com/social/villagephotoui/images/sprites/entity/thumbnail_m_04_tb.jpg',
     },
     {
       id: 18,
-      title: 'Maps',
+      title: 'نقشه',
       qImageUrl:
         'https://ssl.gstatic.com/social/villagephotoui/images/sprites/entity/food.jpg',
     },
     {
       id: 19,
-      title: 'Maps',
+      title: 'نقشه',
       qImageUrl:
         'https://ssl.gstatic.com/social/villagephotoui/images/sprites/entity/boats.jpg',
     },
