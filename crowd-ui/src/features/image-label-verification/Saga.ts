@@ -24,6 +24,7 @@ function* getAsyncPhoto() {
 }
 
 function* clearAsyncQuestion() {
+  yield put(setLoading(false));
   yield put(clearQuestion());
 }
 
