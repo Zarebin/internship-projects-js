@@ -3,7 +3,7 @@ import {
 } from 'redux-saga/effects';
 // import Api from '...'
 import { fetchQuestion, PostUserData } from './api';
-import { GET_ASYNC_NEW_PHOTO, POST_DATA, CLEAR_ASYNC_QUESTION } from './Actions';
+import { GET_ASYNC_NEW_PHOTO, POST_DATA } from './Actions';
 import {
   setLoading,
   selectCategoryTitle,
@@ -23,11 +23,6 @@ function* getAsyncPhoto() {
   yield put(setLoading(false));
 }
 
-function* clearAsyncQuestion() {
-  yield put(setLoading(false));
-  yield put(clearQuestion());
-}
-
 function* postUsersFetch(action: any) {
   // #FIXME: this should be get from userSelector
   const userId = 0;
@@ -45,7 +40,6 @@ function* postUsersFetch(action: any) {
 function* mySaga() {
   yield takeEvery(POST_DATA, postUsersFetch);
   yield takeEvery(GET_ASYNC_NEW_PHOTO, getAsyncPhoto);
-  yield takeEvery(CLEAR_ASYNC_QUESTION, clearAsyncQuestion);
 }
 
 export default mySaga;

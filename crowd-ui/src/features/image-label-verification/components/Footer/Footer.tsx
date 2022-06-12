@@ -24,10 +24,11 @@ const Footer = () => {
   });
 
   return (
-    <div className="footer">
+    <>
+      <div className="line" />
       <Link
         to={`/imageLabelQuestions?query=${categoryTitle}`}
-        className={!isLoading ? 'footer__next cursor-pointer' : ' footer__next disabled-item'}
+        className={!isLoading ? 'footer cursor-pointer' : 'footer disabled-item'}
         onClick={() => {
           dispatch(postData(CreateAnswer(AnswerType.skip)));
         }}
@@ -41,7 +42,7 @@ const Footer = () => {
           </div>
         </div>
       </Link>
-    </div>
+    </>
   );
 };
 

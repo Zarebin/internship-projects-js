@@ -8,7 +8,7 @@ import { FormattedMessage } from 'react-intl';
 import { Link } from 'react-router-dom';
 import './Header.scss';
 import { useAppDispatch } from '../../../../app/hooks';
-import { clearQuestionWithSaga } from '../../Actions';
+import { clearQuestion } from '../../imageLabelVerificationSlice';
 
 const Header = () => {
   const dispatch = useAppDispatch();
@@ -17,13 +17,10 @@ const Header = () => {
     <AppBar position="static" sx={{ backgroundColor: 'white', color: '#3F3F3F' }}>
       <Toolbar className="header flex-row-justify-between">
         <Link to="/" className="margin-icon">
-          {/* <FontAwesomeIcon icon={faEllipsisV} /> */}
           <IconButton
-            onClick={() => {
-              dispatch(clearQuestionWithSaga());
-            }}
+            // FIXME:
+            onClick={() => {}}
           >
-
             <MoreVertIcon />
           </IconButton>
         </Link>
@@ -31,7 +28,11 @@ const Header = () => {
         <h3 className="text-style"><FormattedMessage id="imageLabel.appName" /></h3>
 
         <Link to="/imageLabelVerification">
-          <IconButton onClick={() => {}}>
+          <IconButton
+            onClick={() => {
+              dispatch(clearQuestion());
+            }}
+          >
             <ArrowBackIcon />
           </IconButton>
         </Link>
