@@ -1,5 +1,6 @@
 import './Sentiment.scss';
 import React, { useEffect } from 'react';
+import { FormattedMessage } from 'react-intl';
 import { getUsersFetch, postData } from './actions';
 import { useAppSelector, useAppDispatch } from '../../app/hooks';
 import { selectLoading, selectQuestion } from './sentimentSlice';
@@ -32,18 +33,22 @@ function Sentiment() {
 
   return (
     <>
-      {isLoading && <p> please wait </p>}
+      {isLoading && (
+      <p>
+        <FormattedMessage id="general.loading" />
+      </p>
+      )}
       {!isLoading && (
-        <div className="container">
+        <div className="App">
           <Header />
-          <div className="sentiment">
-            <div className="content">
-              <p className="question">
-                what kind of emotion is expressed in the text below?
+          <div className="body">
+            <div className="body__question">
+              <p className="body__text">
+                <FormattedMessage id="sentiment.question" />
               </p>
-              <p className="answer">{question.title}</p>
+              <p className="body__answer">{question.title}</p>
             </div>
-            <div className="rating">
+            <div className="body__feeling">
               <button
                 aria-label="sad"
                 type="button"
