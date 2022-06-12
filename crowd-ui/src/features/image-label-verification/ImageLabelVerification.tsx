@@ -44,7 +44,7 @@ const ImageLabelQuestions = () => {
         <div className="app-container">
           <Header />
           <div className="main-container">
-            <div className="inner-container">
+            <div className="inner-container-second">
               <div className="content-container">
                 <div className="question-container">
                   <FormattedMessage id="imageLabel.question" />
@@ -79,7 +79,7 @@ const ImageLabelQuestions = () => {
         <div className="app-container">
           <Header />
           <div className="main-container">
-            <div className="inner-container">
+            <div className="inner-container-second">
               {/* <Header /> */}
               <div className="content-container">
                 <div className="question-container">

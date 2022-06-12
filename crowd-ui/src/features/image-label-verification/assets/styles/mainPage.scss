@@ -24,10 +24,19 @@
   background-color: rgb(255, 255, 255);
 }
 
-.inner-container {
+.inner-container-first {
   width: 95%;
   display: flex;
   flex-direction: column;
+  margin: auto;
+  height: 90vh;
+  padding-top: 15px;
+}
+.inner-container-second {
+  width: 95%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   margin: auto;
   height: 90vh;
   padding-top: 15px;

@@ -22,7 +22,7 @@ const ImageLabelHome = () => {
     <>
       <Header />
       <div className="main-container">
-        <div className="inner-container">
+        <div className="inner-container-first">
           <h3><FormattedMessage id="imageLabel.ChooseCategory" /></h3>
           <div className="categories-container">
             {categoriesState.map((category: any) => (
