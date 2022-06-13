@@ -6,7 +6,6 @@ export default function Home() {
     <div>
       <Link to="/"><button type="button">Image Label Verification</button></Link>
       <Link to="/translationValidation"><button type="button">Translation Validation</button></Link>
-
     </div>
 
   );
