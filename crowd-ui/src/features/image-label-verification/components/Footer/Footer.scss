@@ -1,0 +1,28 @@
+.footer {
+  display: flex;
+  flex-direction: row;
+  height: 55px;
+  justify-content: flex-start;
+  border: 1px solid #3368bd;
+  background-color: white;
+  //margin-top: auto;
+  position: fixed;
+  bottom: 0;
+
+  & > * {
+    margin: 10px;
+  }
+
+  font-size: 0.8rem;
+  color: #0d47a1;
+
+  &__next {
+    display: flex;
+    flex-direction: row;
+    color: #5c49d8;
+  }
+}
+
+.top-border {
+  border-top: 1px solid #0d47a1;
+}

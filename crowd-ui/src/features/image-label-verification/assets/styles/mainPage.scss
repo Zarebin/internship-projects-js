@@ -1,0 +1,90 @@
+@import "fonts";
+
+* {
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  direction: rtl;
+  box-sizing: border-box;
+  font-family: "IRANYekan";
+}
+
+.app-container {
+  text-align: center;
+}
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  height: 92vh;
+  margin: auto;
+  align-content: center;
+  background-color: rgb(255, 255, 255);
+}
+
+.inner-container-first {
+  width: 95%;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  height: 90vh;
+  padding-top: 15px;
+}
+.inner-container-second {
+  width: 95%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: auto;
+  height: 90vh;
+  padding-top: 15px;
+}
+
+.flex-row-justify-start {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  float: right;
+}
+
+.flex-row-justify-between {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.text-style {
+  margin-left: 20px;
+  margin-bottom: 5px;
+}
+
+.icon {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+}
+
+.padding-icon {
+  padding: px;
+}
+
+.margin-icon {
+  margin: 5px;
+  margin-right: 10px;
+}
+.large-text {
+  font-size: 1.4rem;
+}
+
+.categories-container {
+  box-sizing: border-box;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
