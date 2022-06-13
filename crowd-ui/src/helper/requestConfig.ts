@@ -1,8 +1,8 @@
 import axios from 'axios';
 
 const request = axios.create({
-  baseURL: 'https://jsonplaceholder.typicode.com',
-  timeout: 5000,
+  baseURL: process.env.REACT_APP_API_URL,
+  timeout: process.env.REACT_APP_API_TIMEOUT as any,
 });
 
 export default request;

@@ -1,14 +1,35 @@
 .footer{
+  direction: rtl;
   border-top: lightgray 1px solid;
   flex:1 1 auto;
   display: flex;
   justify-content: space-between;
-  flex-direction: row;
-}
+  height: 55px;
+  width: 100%;
+  align-items: center;
+  border-top: 1px solid #bcc1c9;
+  background-color: white;
+  //margin-top: auto;
+  position: fixed;
+  bottom: 0;
 
 
-.footer-a{
-  margin-top: 1rem;
-  text-decoration: none;
+  & > * {
+    margin: 10px;
+  }
+
+  font-size: 0.8rem;
+  color: #0d47a1;
+
+  &__next {
+    float: right;
+    display: flex;
+    flex-direction: row-reverse;
+    background-color: transparent;
+    border: none;
+    font-size: 0.8rem;
+    color: #5C49D8;
+  }
 }
+
 

@@ -1,22 +1,12 @@
-Button{
-  width: 7rem;
-}
 .Container-translation
 {
-  height:100vh;
-  width: 100vw;
   direction: ltr;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  overflow-x: hidden;
+  //overflow-x: hidden;
   overflow-y: hidden;
+  width: 100%;
+  margin: auto;
 }
 
-//.container__button{
-//  //width: 5rem;
-//  margin: 0 auto;
-//  flex: 1 1 auto; /*grow shrink bases */
-//  //margin-bottom:2rem;
-//  //background-color: darkgrey;
-//}

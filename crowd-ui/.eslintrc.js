@@ -48,5 +48,9 @@ module.exports = {
     // https://github.com/typescript-eslint/typescript-eslint/issues/2621#issuecomment-701970389
     'no-unused-vars': 'off',
     '@typescript-eslint/no-unused-vars': 'error',
+
+    // https://stackoverflow.com/a/65768375
+    'no-shadow': 'off',
+    '@typescript-eslint/no-shadow': ['error'],
   },
 };

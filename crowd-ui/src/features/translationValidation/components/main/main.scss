@@ -1,38 +1,46 @@
 .container-main{
+  text-decoration: none;
+  direction: rtl;
+  font-family: "IRANYekan";
+  font-size: 1rem;
   display: flex;
   flex-direction: column;
-  flex: 5 1 auto;
-  justify-content: space-around;
-  margin: 1rem;
+  padding-top: 5rem;
   line-height: 2;
+  position: static;
+  text-align: center;
+  margin: 1rem;
+
 }
 .text{
   color:darkgrey;
-  font-size: 0.75rem;
-  flex: 1 1 auto;
+  //flex: 1 1 auto;
 }
 .text__transition{
   padding-top:1rem;
-  flex:3 1 auto;
+  //flex:3 1 auto;
 }
 .mainText{
-  font-size: 1.25rem;
-  margin-top: 1rem;
-  flex: 1 1 auto;
+  font-weight:bold ;
+  margin-top: 2rem;
+  //flex: 1 1 auto;
+  text-align: right;
+
 }
 .translationBox
 {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  flex: 1 1 auto;
+  //flex: 1 1 auto;
+
 
 }
 .selfSelection{
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  flex:1 1 auto;
+  //flex:1 1 auto;
 }
 .checkMark{
   display: flex;
@@ -42,9 +50,15 @@
   display: flex;
   flex-direction: column;
   justify-items:center;
-  flex: 12 1 auto; /*grow shrink bases */
-  margin-left: 30%;
+  //flex: 12 1 auto; /*grow shrink bases */
+  position: fixed;
+  bottom: 20%;
+  right: 30%;
 }
 .space{
-  flex: 1 1 auto;
+  flex: 3 1 auto;
+}
+button{
+  width: 7rem;
+
 }

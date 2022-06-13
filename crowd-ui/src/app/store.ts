@@ -1,7 +1,6 @@
 import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit';
 import createSagaMiddleware from 'redux-saga';
 // eslint-disable-next-line import/no-cycle
-import counterReducer from '../features/counter/counterSlice';
 import translationReducer from '../features/translationValidation/slice';
 import rootSaga from './sagas';
 
@@ -10,7 +9,6 @@ const sagaMiddleware = createSagaMiddleware();
 
 const store = configureStore({
   reducer: {
-    counter: counterReducer,
     translationReducer,
     // sentenceReducer:sentenceReducer,
   },

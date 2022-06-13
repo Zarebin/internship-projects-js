@@ -1,13 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import { FormattedMessage } from 'react-intl';
 import { getSentenceFetch, postUserData } from '../../action';
 import './main.scss';
 import { selectSentences, selectLoading } from '../../slice';
-// eslint-disable-next-line import/order
-import Button from 'react-bootstrap/Button';
 
 export default function Main() {
-  const [inputUser, setInputUsers] = useState<any>('');
+  enum answerType {
+    Yes = 1,
+    No = 2,
+    NonSelect = 3,
+  }
+  const [userAnswer, setUserAnswer] = useState<number>(answerType.NonSelect);
   const sentence: any = useSelector<any, any>(selectSentences);
   const isLoading: any = useSelector<any, any>(selectLoading);
   const dispatch = useDispatch();
@@ -29,20 +33,18 @@ export default function Main() {
 
   const getSendData = () => ({
     sentencesId,
-    userSentenceSelect: { inputUser },
+    userSentenceSelect: { userAnswer },
   });
 
   return (
     <>
-      {isLoading && <p>Please waite</p>}
+      {isLoading && <p><FormattedMessage id="translation.general.loading" /></p>}
       {!isLoading
                 && (
                 <div className="container-main">
-                  <div className="text">Are these translation correct?</div>
+                  <h3 className="text"><FormattedMessage id="translation.title" /></h3>
                   <div className="mainText">
-                    {' '}
                     {mainSentence}
-                    {' '}
                   </div>
                   <div className="translationBox">
                     <div className="text__transition">
@@ -55,9 +57,7 @@ export default function Main() {
                         <input
                           name="choose"
                           type="radio"
-                          value="true"
-                          // onChange={handleChange}
-                          onChange={() => setInputUsers(true)}
+                          onChange={() => setUserAnswer(answerType.Yes)}
                         />
                         <span>&#10003;</span>
                       </div>
@@ -65,9 +65,7 @@ export default function Main() {
                         <input
                           name="choose"
                           type="radio"
-                          value="false"
-                          // onChange={handleChange}
-                          onChange={() => setInputUsers(false)}
+                          onChange={() => setUserAnswer(answerType.No)}
                         />
                         <span>&#x2715;</span>
                       </div>
@@ -75,13 +73,15 @@ export default function Main() {
                   </div>
                   <div className="container-main__button">
                     <div className="space" />
-                    <Button
+                    {/* eslint-disable-next-line react/button-has-type */}
+                    <button
                       id="submit_button"
-                      onClick={() => dispatch(postUserData(getSendData()))}
-                      className="btn-primary"
+                      onClick={() => {
+                        dispatch(postUserData(getSendData()));
+                      }}
                     >
                       submit
-                    </Button>
+                    </button>
                   </div>
                 </div>
                 )}
