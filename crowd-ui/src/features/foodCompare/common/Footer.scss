@@ -1,0 +1,23 @@
+
+.footer {
+  position: static;
+  bottom: 0;
+  height: 55px;
+  width: 100%;
+  border-top: 1px solid #bcc1c9;
+  background-color: white;
+
+  & > * {
+    margin: 10px;
+  }
+
+  &__next {
+    float: right;
+    display: flex;
+    flex-direction: row-reverse;
+    background-color: transparent;
+    border: none;
+    font-size: 0.8rem;
+    color: #5C49D8;
+  }
+}

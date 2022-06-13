@@ -1,27 +1,28 @@
 import React from 'react';
-import { createRoot } from 'react-dom/client';
+import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
-import configureAppStore from './app/store';
+import { BrowserRouter } from 'react-router-dom';
+import { IntlProvider } from 'react-intl';
 import App from './App';
+import configureAppStore from './app/store';
 import reportWebVitals from './reportWebVitals';
 import './index.css';
-import { BrowserRouter } from 'react-router-dom';
+import messages from './Lang/message';
 
+const { store } = configureAppStore();
+const locale = 'fa-IR';
 
-
-const {store, } = configureAppStore();
-const container = document.getElementById('root')!;
-const root = createRoot(container);
-
-
-root.render(
+ReactDOM.render(
   <React.StrictMode>
-      <BrowserRouter>
-        <Provider store={store}>
+    <BrowserRouter>
+      <Provider store={store}>
+        <IntlProvider locale={locale} messages={messages[locale]}>
           <App />
-        </Provider>
-      </BrowserRouter>
-  </React.StrictMode>
+        </IntlProvider>
+      </Provider>
+    </BrowserRouter>
+  </React.StrictMode>,
+  document.getElementById('root'),
 );
 
 // If you want to start measuring performance in your app, pass a function

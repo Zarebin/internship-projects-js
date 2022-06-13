@@ -1,16 +1,15 @@
-import { Routes, Route } from 'react-router-dom';
+import React from 'react';
+import { Route } from 'react-router-dom';
 import Home from '../features/home/Home-page';
-import {Counter} from '../features/counter/Counter'
+// import {Counter} from '../features/counter/Counter'
+import FoodCompareBody from '../features/foodCompare/Body';
 
+const Routes = () => (
+  <>
+    <Route exact path="/" component={Home} />
+    {/* <Route exact path='/counter' component={Counter}/> */}
+    <Route exact path="/foodCompare" component={FoodCompareBody} />
+  </>
+);
 
-const AppAllRoutes = () =>{
-    return(
-        <Routes>
-            <Route path='/' element={<Home />}/>
-            <Route path='/counter' element={<Counter />}/>
-        </Routes>
-    )
-
-}
-
-export default AppAllRoutes
+export default Routes;
