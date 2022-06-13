@@ -1,0 +1,20 @@
+//max-width
+$max-width: 480px;
+
+//borders
+$base-border-radius: 4px;
+$base-border-thikness: 1px;
+
+// spacing
+$base-padding: 0.75rem;
+$base-margin: 0.75rem;
+
+// box-shadow
+$base-box-shadow: 0 0 7px 4px rgba(230, 230, 230, 0.5);
+
+// font sizes
+$base-font-size: 1rem;
+$font-size-sm: $base-font-size * 0.75;
+$font-size-lg: $base-font-size * 1.5;
+$font-size-xl: $base-font-size * 2;
+$font-size-xxl: $base-font-size * 3;

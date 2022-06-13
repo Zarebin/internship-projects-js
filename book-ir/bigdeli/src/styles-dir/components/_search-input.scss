@@ -1,0 +1,62 @@
+@mixin flex-container($margin-top: 40px, $justify-content: space-between) {
+  display: flex;
+  max-width: $max-width;
+  margin-top: $margin-top;
+  border: none;
+  align-items: center;
+  justify-content: $justify-content;
+}
+
+.search-container {
+  @include flex-container(40px, space-between);
+  margin-left: $base-margin;
+  margin-right: $base-margin;
+  padding-right: 20px;
+  height: 50px;
+  box-shadow: $base-box-shadow;
+  border-radius: $base-border-radius * 10;
+}
+
+.top-menu-container {
+  @include flex-container(8px, space-between);
+  height: 40px;
+  padding-top: 3px;
+  padding-left: 30px;
+  padding-right: 30px;
+  text-align: right;
+  box-shadow: 0 6px 3px -2px rgb(245, 245, 245);
+  margin-bottom: 10px;
+  direction: rtl;
+}
+
+.input-search {
+  margin-right: 10px;
+  height: 40px;
+  border: none;
+  text-align: right;
+  font-size: $base-font-size;
+  &:focus {
+    outline: none;
+  }
+  &:placeholder {
+    color: rgb(129, 129, 129);
+  }
+}
+.icon-1 {
+  width: 30px;
+  height: 30px;
+  &:hover {
+    cursor: pointer;
+  }
+}
+.icon-2 {
+  width: 22px;
+  height: 22px;
+  margin-left: 20px;
+  cursor: pointer;
+}
+
+.flex-center {
+  display: flex;
+  align-items: center;
+}

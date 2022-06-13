@@ -1,0 +1,149 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: $max-width;
+  margin: auto;
+  align-content: center;
+}
+
+.center-flex {
+  display: flex;
+  justify-content: center;
+}
+
+.result-instance {
+  display: flex;
+  flex-direction: column;
+  margin: 0px 10px 15px 10px;
+  box-shadow: 0 0 5px 3px rgba(218, 216, 216, 0.5);
+  border-radius: 5px;
+  height: auto;
+  padding: 20px;
+}
+.content-container-2 {
+  display: flex;
+  flex-direction: column;
+  width: auto;
+}
+.content-container-3 {
+  display: flex;
+  flex-direction: column;
+  width: auto;
+  align-items: right;
+  text-align: right;
+  align-content: right;
+}
+
+.content-container-4 {
+  direction: rtl;
+  display: flex;
+  flex-direction: row;
+  width: auto;
+  text-align: right;
+  align-content: right;
+  justify-content: right;
+}
+
+.content-container-5 {
+  display: flex;
+  flex-direction: row;
+  width: auto;
+  justify-content: space-between;
+}
+.content-container-5 > img + img {
+  padding-left: 70px;
+}
+
+.other-books-container {
+  display: flex;
+  overflow-x: auto;
+  overflow-y: hidden;
+  flex-direction: row;
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch;
+  direction: rtl;
+}
+
+.other-book-item {
+  display: flex;
+  flex-direction: column;
+  border-radius: 6px;
+  border: 1px rgb(223, 223, 223) solid;
+  min-width: 150px;
+  margin: 20px 0px 20px 10px;
+  overflow: hidden;
+}
+
+.other-book-name {
+  font-weight: bold;
+  text-align: right;
+  margin: 6px 10px 5px 5px;
+}
+.other-book-writer {
+  text-align: right;
+  margin: 6px 10px 5px 5px;
+  color: rgb(90, 90, 90);
+}
+.line {
+  margin: 10px 0 10px 0;
+  height: 0;
+  border: 0.5px rgba(218, 216, 216, 0.5) solid;
+}
+
+.link {
+  color: blue;
+}
+.link1 {
+  margin-right: 40px;
+}
+.bookDescription {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  align-content: right;
+  text-align: right;
+  text-justify: auto;
+  text-align-last: right;
+}
+
+.description {
+  margin-bottom: 10px;
+  align-content: right;
+  text-align: right;
+  text-justify: newspaper;
+  text-align-last: right;
+}
+
+.book-image {
+  overflow: hidden;
+  border-radius: 6px;
+  border: none;
+  height: 80px;
+  width: 80px;
+}
+
+// Writer Search Exclusive Styles
+
+.book-instance-container {
+  border-radius: 6px;
+  border: 1px rgb(221, 220, 220) solid;
+  padding: 8px;
+}
+
+.text-overflow-3dots {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 300px;
+  text-align: right;
+  direction: rtl;
+}
+
+.text-overflow-3dots-130 {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 130px;
+  text-align: right;
+  direction: rtl;
+}
